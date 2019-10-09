@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #cfe1e6;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 62px);
+  grid-template-rows: minmax(180px, auto) repeat(5, 62px);
+}
+
+button {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: #343635;
+  margin: 3px;
+  padding: 7px;
+}
+
+#divide, #multiply, #add, #substract, #equals {
+  background-color: #48add9;
+}
+
+#all-clear, #clear {
+  background-color: #a4a5a6;
+}
+
+#clear {
+  font-size: 1.4rem;
+}
+
+#all-clear, #zero {
+  border-radius: 30px;
+}
+
+button:hover {
+  background-color: rgba(157, 199, 201, .9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  color: #fff;
+  display: flex;
+  align-items: flex-end; /*to the right/end */
+  justify-content: space-around;
+  flex-direction: column; /* so they ligned up vertically */
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all; /* make it go to next line if num is too long*/
+  border-radius: 10%;
+}
+
+.output .previous-number {
+  color: #a4a5a6;
+  font-size: 1.3rem;
+}
+
+.output .current-number {
+  color: #fff;
+  font-size: 2.8rem;
+}
