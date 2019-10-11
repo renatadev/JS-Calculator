@@ -33,7 +33,7 @@ class Calculator {
   }
 
   appendNumber(number) {
-
+    this.currentOperand = number;
   }
 
   chooseOperation(operation) {
@@ -45,6 +45,17 @@ class Calculator {
   }
 
   updateDisplay() {
-
+    this.currentOperandText.innerText = this.currentOperand;
   }
 }
+
+// Create the calculator
+
+const calculator = new Calculator(previousOperandText, currentOperandText);
+
+numberButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.appendNumber(button.innerText);
+    calculator.updateDisplay();
+  })
+})
