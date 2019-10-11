@@ -29,7 +29,7 @@ class Calculator {
   }
 
   delete() {
-
+    this.currentOperand = this.currentOperand.toString().slice(0, -1); //Chop off the last char(num) from the str
   }
 
   appendNumber(number) {
@@ -99,4 +99,14 @@ operationButtons.forEach(button => {
 equalsButton.addEventListener('click', button => {
   calculator.compute(); // when we click "=" we call the compute function
   calculator.updateDisplay();
+})
+
+allClearButton.addEventListener('click', button => {
+  calculator.clear()
+  calculator.updateDisplay()
+})
+
+deleteButton.addEventListener('click', button => {
+  calculator.delete()
+  calculator.updateDisplay()
 })
