@@ -22,8 +22,8 @@ class Calculator {
 
   //operations that the calculator class can perform - functions
   clear() {
-    this.currentOperandText = '';
-    this.previousOperandText = '';
+    this.currentOperand = '';
+    this.previousOperand = '';
     this.operation = undefined;
   }
 
