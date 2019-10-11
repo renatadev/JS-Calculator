@@ -20,7 +20,6 @@ class Calculator {
     this.clear(); //Clear all inputs and set them to default value to start with
   }
 
-//properties that the calculator needs to store
   //operations that the calculator class can perform - functions
   clear() {
     this.currentOperandText = "";
@@ -73,8 +72,34 @@ class Calculator {
     this.previousOperand = '';
   }
 
+  //helper function to update display func
+  getDisplayNumber(number) {
+    const stringNumber = number.toString();
+    const integerDigits = parseFloat(stringNumber.split('.')[0]); //1.convert to num from str // 2.split between float and integer //3. get the first part
+    const decimalDigits = stringNumber.split('.')[1]; //4. get the nums(decimals) after the split
+    let integerDisplay;
+    //Integers display
+    if (isNaN(integerDigits)) {
+      integerDisplay = '';
+    } else {
+      integerDisplay = integerDigits.toLocaleString('fr-FR', { maximumFractionDigits: 0 }); //Used french to match with GB numering system (no commas, and dots for decimals)
+    }
+    //Decimals display
+    if (decimalDigits != null) {
+      return `${integerDisplay}.${decimalDigits}`;
+    } else {
+      return integerDisplay;
+    }
+  }
+
   updateDisplay() {
     this.currentOperandText.innerText = this.currentOperand;
+    if (this.operation != null) {
+      this.previousOperandText.innerText =
+        `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
+    } else {
+      this.previousOperandText.innerText = '';
+    }
   }
 }
 
@@ -102,11 +127,11 @@ equalsButton.addEventListener('click', button => {
 })
 
 allClearButton.addEventListener('click', button => {
-  calculator.clear()
-  calculator.updateDisplay()
+  calculator.clear();
+  calculator.updateDisplay();
 })
 
 deleteButton.addEventListener('click', button => {
-  calculator.delete()
-  calculator.updateDisplay()
+  calculator.delete();
+  calculator.updateDisplay();
 })
