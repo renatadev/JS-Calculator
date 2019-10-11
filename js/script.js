@@ -38,7 +38,7 @@ class Calculator {
   }
 
   chooseOperation(operation) {
-    if (this.currentOperand === '') return; //do nothing 
+    if (this.currentOperand === '') return; //do nothing
     if (this.previousOperand !== '') {
       this.compute();
     }
@@ -48,7 +48,29 @@ class Calculator {
   }
 
   compute() {
-
+    let computation; //result of our compute func
+    const prev = parseFloat(this.previousOperand); //convert to a num
+    const current = parseFloat(this.currentOperand);
+    if (isNaN(prev) || isNaN(current)) return; // cancel the func if NaN
+    switch (this.operation) {
+      case '÷':
+        computation = prev / current;
+        break;
+      case '×':
+        computation = prev * current;
+        break;
+      case '-':
+        computation = prev - current;
+        break;
+      case '+':
+        computation = prev + current;
+        break;
+      default:
+        return;
+    }
+    this.currentOperand = computation; //set current operant to the result of the computation
+    this.operation = undefined;
+    this.previousOperand = '';
   }
 
   updateDisplay() {
@@ -69,7 +91,12 @@ numberButtons.forEach(button => {
 
 operationButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculator.chooseOperation(button.innerText)
-    calculator.updateDisplay()
+    calculator.chooseOperation(button.innerText);
+    calculator.updateDisplay();
   })
+})
+
+equalsButton.addEventListener('click', button => {
+  calculator.compute(); // when we click "=" we call the compute function
+  calculator.updateDisplay();
 })
