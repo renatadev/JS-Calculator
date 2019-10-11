@@ -91,12 +91,12 @@ button:hover {
   border-radius: 10%;
 }
 
-.output .previous-number {
+.output .previous-operand {
   color: #a4a5a6;
   font-size: 1.3rem;
 }
 
-.output .current-number {
+.output .current-operand {
   color: #fff;
   font-size: 2.8rem;
 }
