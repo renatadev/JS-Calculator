@@ -17,11 +17,15 @@ class Calculator {
   constructor(previousOperandText, currentOperandText) {
     this.previousOperandText = previousOperandText;
     this.currentOperandText = currentOperandText;
+    this.clear(); //Clear all inputs and set them to default value to start with
   }
 
+//properties that the calculator needs to store
   //operations that the calculator class can perform - functions
   clear() {
-
+    this.currentOperandText = "";
+    this.previousOperandText = "";
+    this.operation = undefined;
   }
 
   delete() {
@@ -41,7 +45,6 @@ class Calculator {
   }
 
   updateDisplay() {
-    
-  }
 
+  }
 }
