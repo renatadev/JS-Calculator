@@ -33,11 +33,18 @@ class Calculator {
   }
 
   appendNumber(number) {
-    this.currentOperand = number;
+    if (number === '.' && this.currentOperand.includes('.')) return; // stop appending a "." if it has already been added
+    this.currentOperand = this.currentOperand.toString() + number.toString(); //convert to str to properly append them - use + to add at the end
   }
 
   chooseOperation(operation) {
-
+    if (this.currentOperand === '') return; //do nothing 
+    if (this.previousOperand !== '') {
+      this.compute();
+    }
+    this.operation = operation;
+    this.previousOperand = this.currentOperand; //once we're done typing the current num, pass it into the prev
+    this.currentOperand = ''; // so we clear the current so we can type it again
   }
 
   compute() {
@@ -57,5 +64,12 @@ numberButtons.forEach(button => {
   button.addEventListener('click', () => {
     calculator.appendNumber(button.innerText);
     calculator.updateDisplay();
+  })
+})
+
+operationButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.chooseOperation(button.innerText)
+    calculator.updateDisplay()
   })
 })
