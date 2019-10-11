@@ -22,8 +22,8 @@ class Calculator {
 
   //operations that the calculator class can perform - functions
   clear() {
-    this.currentOperandText = "";
-    this.previousOperandText = "";
+    this.currentOperandText = '';
+    this.previousOperandText = '';
     this.operation = undefined;
   }
 
@@ -109,29 +109,29 @@ const calculator = new Calculator(previousOperandText, currentOperandText);
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculator.appendNumber(button.innerText);
-    calculator.updateDisplay();
+    calculator.appendNumber(button.innerText)
+    calculator.updateDisplay()
   })
 })
 
 operationButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculator.chooseOperation(button.innerText);
-    calculator.updateDisplay();
+    calculator.chooseOperation(button.innerText)
+    calculator.updateDisplay()
   })
 })
 
 equalsButton.addEventListener('click', button => {
-  calculator.compute(); // when we click "=" we call the compute function
-  calculator.updateDisplay();
+  calculator.compute() // when we click "=" we call the compute function
+  calculator.updateDisplay()
 })
 
 allClearButton.addEventListener('click', button => {
-  calculator.clear();
-  calculator.updateDisplay();
+  calculator.clear()
+  calculator.updateDisplay()
 })
 
 deleteButton.addEventListener('click', button => {
-  calculator.delete();
-  calculator.updateDisplay();
+  calculator.delete()
+  calculator.updateDisplay()
 })
