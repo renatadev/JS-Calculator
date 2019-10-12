@@ -67,7 +67,7 @@ class Calculator {
       default:
         return;
     }
-    this.currentOperand = computation; //set current operant to the result of the computation
+    this.currentOperand = computation.toFixed(2); //set current operant to the result of the computation
     this.operation = undefined;
     this.previousOperand = '';
   }
