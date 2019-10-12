@@ -62,7 +62,7 @@ button {
 }
 
 #clear {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 #all-clear, #zero {
@@ -118,4 +118,11 @@ abbr, a {
 
 .fas:hover, a:hover {
   color: #343635;
+}
+
+/*    Media Queries   */
+@media only screen and (max-width: 600px) {
+  #clear {
+    font-size: 1.8rem;
+  }
 }
