@@ -13,7 +13,7 @@ As a pre-course practical project for the **Founders&Coders** course, I had to c
 - [x] DON'T use frameworks.
 
 Here's a sneak-peek to my calculator:
-![img](ScreenShot.png)
+![img](img/ScreenShot.png)
 
 ------------------------------------------------------
 
