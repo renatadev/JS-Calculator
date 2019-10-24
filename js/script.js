@@ -5,8 +5,8 @@ const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
-const previousOperandText = document.querySelector('[data-previous-operand]');
-const currentOperandText = document.querySelector('[data-current-operand]');
+const prevOp = document.querySelector('[data-previous-operand]');
+const currOp = document.querySelector('[data-current-operand]');
 
 
 // Calculator class - containing all the inputs and functions for the calculator
@@ -14,9 +14,9 @@ const currentOperandText = document.querySelector('[data-current-operand]');
 
 class Calculator {
   //where to place the display for the calculator
-  constructor(previousOperandText, currentOperandText) {
-    this.previousOperandText = previousOperandText;
-    this.currentOperandText = currentOperandText;
+  constructor(prevOp, currOp) {
+    this.prevOp = prevOp;
+    this.currOp = currOp;
     this.clear(); //Clear all inputs and set them to default value to start with
   }
 
@@ -93,19 +93,19 @@ class Calculator {
   }
 
   updateDisplay() {
-    this.currentOperandText.innerText = this.currentOperand;
+    this.currOp.innerText = this.currentOperand;
     if (this.operation != null) {
-      this.previousOperandText.innerText =
+      this.prevOp.innerText =
         `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
     } else {
-      this.previousOperandText.innerText = '';
+      this.prevOp.innerText = '';
     }
   }
 }
 
 // Create the calculator
 
-const calculator = new Calculator(previousOperandText, currentOperandText);
+const calculator = new Calculator(prevOp, currOp);
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
