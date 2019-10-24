@@ -15,6 +15,11 @@ As a pre-course practical project for the **Founders&Coders** course, I had to c
 Here's a sneak-peek to my calculator:
 ![img](img/ScreenShot.png)
 
+
+#### :exclamation: Features I'd like to add: :exclamation:
+
+:computer: Keyboard input.
+
 ------------------------------------------------------
 
-You can have a look at my calculator by clicking [here.](https://renatajarmova.github.io/JS-Calculator/)
+You can have a deeper look at my calculator and play around with it by clicking [here.](https://renatajarmova.github.io/JS-Calculator/)
