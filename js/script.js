@@ -67,7 +67,7 @@ class Calculator {
       default:
         return;
     }
-    this.currentOperand = computation; //set current operant to the result of the computation
+    this.currentOperand = Math.round(computation * 1000) / 1000; //set current operant to the result of the computation
     this.operation = undefined;
     this.previousOperand = '';
   }
