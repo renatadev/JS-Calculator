@@ -1,10 +1,10 @@
 //Access all elements from the DOM
 
-const numberButtons = document.querySelectorAll('[data-number]');
-const operationButtons = document.querySelectorAll('[data-operation]');
-const equalsButton = document.querySelector('[data-equals]');
-const deleteButton = document.querySelector('[data-delete]');
-const allClearButton = document.querySelector('[data-all-clear]');
+const numberKeys = document.querySelectorAll('[data-number]');
+const operationKeys = document.querySelectorAll('[data-operation]');
+const equalsKey = document.querySelector('[data-equals]');
+const deleteKey = document.querySelector('[data-delete]');
+const allClearKey = document.querySelector('[data-all-clear]');
 const prevOp = document.querySelector('[data-previous-operand]');
 const currOp = document.querySelector('[data-current-operand]');
 
@@ -107,31 +107,31 @@ class Calculator {
 
 const calculator = new Calculator(prevOp, currOp);
 
-numberButtons.forEach(button => {
+numberKeys.forEach(button => {
   button.addEventListener('click', () => {
     calculator.appendNumber(button.innerText)
     calculator.updateDisplay()
   })
 })
 
-operationButtons.forEach(button => {
+operationKeys.forEach(button => {
   button.addEventListener('click', () => {
     calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
 })
 
-equalsButton.addEventListener('click', button => {
+equalsKey.addEventListener('click', button => {
   calculator.compute() // when we click "=" we call the compute function
   calculator.updateDisplay()
 })
 
-allClearButton.addEventListener('click', button => {
+allClearKey.addEventListener('click', button => {
   calculator.clear()
   calculator.updateDisplay()
 })
 
-deleteButton.addEventListener('click', button => {
+deleteKey.addEventListener('click', button => {
   calculator.delete()
   calculator.updateDisplay()
 })

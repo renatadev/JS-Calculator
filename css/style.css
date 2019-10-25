@@ -27,11 +27,11 @@ body {
 }
 
 /*    Calculator grid   */
-.calculator-grid {
+.calculator-display {
   display: grid;
   justify-content: center;
   align-content: center;
-  min-height: 100vh;
+  min-height: 96vh;
   grid-template-columns: repeat(4, 62px);
   grid-template-rows: minmax(180px, auto) repeat(5, 62px);
 }
